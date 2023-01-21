@@ -1,9 +1,9 @@
 #!/bin/bash
-server="nightride.fm"
+server="irc.rekt.network"
 channel="#rekt"
 encryption="aes-256-cbc"
 password="password"
-nc $server 6667 | while read ircmsg; do
+nc $server 6697 | while read ircmsg; do
     echo $ircmsg
     if [[ $ircmsg == PING* ]]; then
         echo "PONG ${ircmsg#PING :}" >&2
